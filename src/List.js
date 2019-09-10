@@ -3,7 +3,7 @@ import Task from "./Task";
 
 const pageBreak = 70;
 
-const List = ({ tasks, addHeight }) => {
+const List = ({ tasks }) => {
   const references = useRef({});
 
   const [pagesBreaks, setPageBreaks] = useState({});
@@ -39,7 +39,7 @@ const List = ({ tasks, addHeight }) => {
       {tasks.map(task => (
         <Fragment key={task}>
           {pagesBreaks[task] && <div>break !!!!</div>}
-          <Task ref={getOrCreateRef(task)} name={task} addHeight={addHeight} />
+          <Task ref={getOrCreateRef(task)} name={task} />
         </Fragment>
       ))}
     </ul>
